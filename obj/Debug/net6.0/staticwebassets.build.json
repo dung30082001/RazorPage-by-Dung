@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "Hash": "F5m+CSUcri1iYggqOilyv+AnrTTtFKK0n3dv7M2aDQ8=",
+  "Source": "MyRazorPage",
+  "BasePath": "_content/MyRazorPage",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "MyRazorPage\\wwwroot",
+      "Source": "MyRazorPage",
+      "ContentRoot": "C:\\Users\\beast\\OneDrive\\Desktop\\PRN221_RazorPages\\PRN221_RazorPages\\MyRazorPage\\MyRazorPage\\wwwroot\\",
+      "BasePath": "_content/MyRazorPage",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\beast\\OneDrive\\Desktop\\PRN221_RazorPages\\PRN221_RazorPages\\MyRazorPage\\MyRazorPage\\wwwroot\\css\\style.css",
+      "SourceId": "MyRazorPage",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\beast\\OneDrive\\Desktop\\PRN221_RazorPages\\PRN221_RazorPages\\MyRazorPage\\MyRazorPage\\wwwroot\\",
+      "BasePath": "_content/MyRazorPage",
+      "RelativePath": "css/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\style.css"
+    },
+    {
+      "Identity": "C:\\Users\\beast\\OneDrive\\Desktop\\PRN221_RazorPages\\PRN221_RazorPages\\MyRazorPage\\MyRazorPage\\wwwroot\\img\\1.jpg",
+      "SourceId": "MyRazorPage",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\beast\\OneDrive\\Desktop\\PRN221_RazorPages\\PRN221_RazorPages\\MyRazorPage\\MyRazorPage\\wwwroot\\",
+      "BasePath": "_content/MyRazorPage",
+      "RelativePath": "img/1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\beast\\OneDrive\\Desktop\\PRN221_RazorPages\\PRN221_RazorPages\\MyRazorPage\\MyRazorPage\\wwwroot\\img\\2.jpg",
+      "SourceId": "MyRazorPage",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\beast\\OneDrive\\Desktop\\PRN221_RazorPages\\PRN221_RazorPages\\MyRazorPage\\MyRazorPage\\wwwroot\\",
+      "BasePath": "_content/MyRazorPage",
+      "RelativePath": "img/2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\2.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\beast\\OneDrive\\Desktop\\PRN221_RazorPages\\PRN221_RazorPages\\MyRazorPage\\MyRazorPage\\wwwroot\\img\\logo.png",
+      "SourceId": "MyRazorPage",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\beast\\OneDrive\\Desktop\\PRN221_RazorPages\\PRN221_RazorPages\\MyRazorPage\\MyRazorPage\\wwwroot\\",
+      "BasePath": "_content/MyRazorPage",
+      "RelativePath": "img/logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\logo.png"
+    }
+  ]
+}

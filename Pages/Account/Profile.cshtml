@@ -1,0 +1,55 @@
+﻿@page
+@model MyRazorPage.Pages.Account.ProfileModel
+        <div id="content">
+            <div id="content-left">
+                <h3 style="font-weight: normal;">Welcome, Phạm Ngọc Minh Châu</h3>
+                <h3>Account Management</h3>
+                <ul>
+                    <a href="profile.html">
+                    <li>Personal information</li></a>
+                </ul>
+                <h3>My order</h3>
+                <ul>
+                    <a asp-page="Profile1">
+                    <li>All orders</li></a>
+                    <a href="#">
+                    <li>Canceled order</li></a>
+                </ul>
+            </div>
+            <form action="" method="post">
+                <input hidden asp-for="Account.AccountId" />
+                <input hidden asp-for="Customers.CustomerId" />
+            <div id="content-right">
+                <div class="path">Personal information</b></div>
+                <div class="content-main">
+                    <div id="profile-content">
+                        <div class="profile-content-col">
+                        <div>Company name:@Model.customer.CompanyName</div>
+                        <input asp-for="Customers.CompanyName" /><br />
+                    <div>Contact name:@Model.customer.ContactName</div>
+                        <input asp-for="Customers.ContactName" /><br />
+                    <div>
+                        <input type="submit" value="Edit info" />
+                    </div>
+                </div>
+                <div class="profile-content-col">
+                    <div>Company title:@Model.customer.ContactTitle</div>
+                        <input asp-for="Customers.ContactTitle" /><br />
+                    <div>Address: @Model.customer.Address</div>
+                        <input asp-for="Customers.Address" /><br />
+                </div>
+                <div class="profile-content-col">
+                    <div>Email: @Model.accounts.Email</div>
+                        <input asp-for="Account.Email" /><br />
+                        <input asp-for="Account.Password" value="@Model.accounts.Password" hidden /><br />
+                        <input asp-for="Account.CustomerId" value="@Model.accounts.CustomerId" hidden /><br />
+                        <input asp-for="Account.EmployeeId" value="@Model.accounts.EmployeeId" hidden /><br />
+                        <input asp-for="Account.Role" value="@Model.accounts.Role" hidden /><br />
+                </div>
+                    </div>
+                </div>
+            </div>
+    </form>
+        </div>
+
+

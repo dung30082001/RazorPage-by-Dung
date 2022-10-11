@@ -1,0 +1,46 @@
+﻿@page
+@model MyRazorPage.Pages.IndexModel
+@{
+}
+
+<div id="content-left">
+    <h3>CATEGORY</h3>
+
+    @foreach (var obj in Model.Categories)
+    {
+        <ul>
+            <a asp-page="Index" asp-route-id="@obj.CategoryId">
+            <li>@obj.CategoryName</li></a>
+        </ul>
+    }
+</div>
+<div id="content-right">
+    <div class="path">Product</b></div>
+    <form method="post" id="form_submit">
+        <label for="Price">Price:</label>
+        <select id="Price" name="Price" onchange="this.form.submit()" required>
+            <option hidden>Select an option</option>
+            <option value="ASC">Price ASC</option>
+            <option value="DESC">Price DESC</option>
+        </select>
+    </form>
+    <paging class="pagination" total-records="@Model.totalProduct" show-total-pages="false" show-total-records="false" page-size="@Model.pageSize" page-no="@Model.pageNo"></paging>
+
+    <div class="content-main">
+        @foreach (var obj in Model.LProducts)
+        {
+            <div class="product">
+                <a asp-page="Product/Detail" asp-route-id="@obj.ProductId"><img src="img/1.jpg" width="100%" /></a>
+                <div class="name"><a asp-page="Product/Detail" asp-route-id="@obj.ProductId">@obj.ProductName</a></div>
+                <div class="price">@obj.UnitPrice</div>
+                <div><a href="">Buy now</a></div>
+            </div>
+        }
+    </div>
+    <script>
+        function submitForm() {
+            let form = document.getElementById("form_submit");
+            form.submit();
+        }
+    </script>
+</div>

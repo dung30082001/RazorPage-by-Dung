@@ -1,0 +1,49 @@
+﻿@page
+@model MyRazorPage.Pages.Account.Profile1Model
+<div id="content-right">
+    <div class="path">LIST ORDERS</b></div>
+    @foreach (var obj in Model.orders)
+    {
+        <div class="content-main">
+            <div id="profile-content-order">
+                <div>
+                    <div class="profile-order-title">
+                        <div class="profile-order-title-left">
+                            <div>Order creation date:@obj.OrderDate </div>
+                            OrderId:<a asp-page="Profile1" asp-route-id=@obj.OrderId>@obj.OrderId</a>
+                        </div>
+                        <div class="profile-order-title-right">
+                            <span>Pending</span>
+                        </div>
+                    </div>
+                    @if (Model.detail != null)
+                    {
+                        @if (@obj.OrderId==Model.Order.OrderId)
+                        {
+                            @foreach (var od in Model.detail)
+                            {
+                                <div class="profile-order-content">
+                                    <div class="profile-order-content-col1">
+                                        <a href="detail.html"><img src="~/img/2.jpg" width="100%" /></a>
+                                    </div>
+                                    <div class="profile-order-content-col2">Product:@od.ProductId</div>
+                                    <div class="profile-order-content-col3">Quantity:@od.Quantity </div>
+                                    <div class="profile-order-content-col4">Price:@od.UnitPrice</div>
+                                </div>
+                            }
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    }
+    <script>
+        function submitForm() {
+            let form = document.getElementById("form_submit");
+            form.submit();
+        }
+    </script>
+
+
+</div>
+

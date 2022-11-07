@@ -1,0 +1,38 @@
+Ở màn hình hiển thị chưa đăng nhập
+-Load thanh category
+-Load Product
+-Sort theo desc,asc,search theo tên
+-Phân trang
+-Sản phẩm được hiện thị ảnh
+-Khi ấn vào sản phẩm sẽ hiển thị sản phẩm detail. Có thể add vào cart
+-Mã hóa bằng cookie nên không thể truy cập vào trang admin
+=>Khi add vào cart thì sẽ điền thông tin khách vãng lai và ấn order lúc này sẽ được in ra hóa đơn và tạo một order và order detail trong db với thông tin vừa nhập
+
++Khi ấn vào login
+-Sẽ có chức năng quên mật khẩu gửi mail
+-Chức năng đăng kí tài khoản
+-Cả 2 chức năng mật khẩu đều đã được mã hóa 
+
++Sau khi login với chức năng người dùng
+-Lúc này sẽ có chức năng xem profile của bản thân. Có thể thay đổi thông tin trực tiếp trên trang web có áp dụng signalR
+-Sẽ có chức năng load toàn bộ order và orderdetail của bản thân
+
++Sau khi đăng nhập với chức năng admin
+
+-Đầu tiên là Dashboard sẽ có thanh để filter trong 3 năm
+-Kiểm tra được các thông tin cơ bản
+
+-Ở Order thì có thể filter theo orderDate và hiển thị thông tin của các Order
+-Có thể export product sang file Excel
+-Có thể xem orderDetail của tất cả order
+
+-Ở Product có thể filter bằng category và search song song
+-Có thể add product,edit,delete ở dạng signalR
+-Có thể export sang Excel
+-Có thể uploadFile vào database rồi load lên trang
+-Có phân trang
+
+-Có trang categories 
+-Thêm,sửa,xóa categories
+
+

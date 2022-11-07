@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using MyRazorPage.Models;
-
+using System.Diagnostics;
 
 namespace MyRazorPage.Pages.Account
 {
@@ -20,30 +20,41 @@ namespace MyRazorPage.Pages.Account
         public Models.Account accounts { get; set; }
 
         public Customer DCustomer { get; set; }
+
+        public Customer RCustomer
+        {
+            get; set;
+        }
         public Order Order { get; set; }
         public OrderDetail ODetail { get; set; }
         public double Total { get; set; }
         public int Size = 0;
+        
+        public string ID { get; set; }
         public CartModel(PRN221_DBContext dbContext)
         {
             _dbContext = dbContext;
         }
-        public void OnGet(string id)
+        public void OnGet()
         {
-            if(JsonSerializer.Deserialize<Models.Account>(HttpContext.Session.GetString("CustSession")) == null)
-            {
-                return;
-            }
-            if (JsonSerializer.Deserialize<Models.Account>(HttpContext.Session.GetString("CustSession")) != null)
-            { 
-                accounts = JsonSerializer.Deserialize<Models.Account>(HttpContext.Session.GetString("CustSession"));
-            }
-            DCustomer = _dbContext.Customers.Find(accounts.CustomerId);
+            //accounts = JsonSerializer.Deserialize<Models.Account>(HttpContext.Session.GetString("CustSession"));
+            //Id = (int)HttpContext.Session.GetInt32("Id");
+            //if (Id!= 0)
+            //{
+            //DCustomer = _dbContext.Customers.Find(accounts.CustomerId);
+            DCustomer = _dbContext.Customers.Find(HttpContext.Session.GetString("cusid"));
+            //}
+            //if (Id == 0)
+            //{
+            //    DCustomer = _dbContext.Customers.Find("XEAKQ");
+            //}
             listP = SessionHelper.GetObjectFromJson<List<Item>>(HttpContext.Session, "cart");
             Total = listP.Sum(i => Convert.ToDouble(i.Product.UnitPrice) * i.Quantity);
         }
-        public IActionResult OnGetBuyNow(string id)
+        public IActionResult OnGetBuyNow(string id,string cusid)
         {
+            //id = ID;
+            HttpContext.Session.SetString("cusid",cusid);
             listP = SessionHelper.GetObjectFromJson<List<Item>>(HttpContext.Session, "cart");
             if (listP == null)
             {
@@ -104,22 +115,26 @@ namespace MyRazorPage.Pages.Account
         }
         public async Task<IActionResult> OnPost()
         {
+            DCustomer = _dbContext.Customers.Find(HttpContext.Session.GetString("cusid"));
             listP = SessionHelper.GetObjectFromJson<List<Item>>(HttpContext.Session, "cart");
             Total = listP.Sum(i => Convert.ToDouble(i.Product.UnitPrice) * i.Quantity);
-            accounts = JsonSerializer.Deserialize<Models.Account>(HttpContext.Session.GetString("CustSession"));
-            if (accounts==null)
+            if (DCustomer.CustomerId.Equals("FOLIG"))
             {
+                String id = GenerateCusID(5);
+                customer.CustomerId = id;
+                string date = DateTime.UtcNow.ToString("MM-dd-yyyy");
+                customer.CreatedDate = Convert.ToDateTime(date);
                 await _dbContext.Customers.AddAsync(customer);
                 await _dbContext.SaveChangesAsync();
             }
             Order = new Order();
-            if (accounts == null)
+            if (!DCustomer.CustomerId.Equals("FOLIG"))
             {
                 Order.CustomerId = DCustomer.CustomerId;
             }
             else
             {
-                Order.CustomerId = "ERNSH";
+                Order.CustomerId = "FOLIG";
             }
             await _dbContext.Orders.AddAsync(Order);
             await _dbContext.SaveChangesAsync();
@@ -134,7 +149,32 @@ namespace MyRazorPage.Pages.Account
                 await _dbContext.OrderDetails.AddAsync(ODetail);
                 await _dbContext.SaveChangesAsync();
             }
-            return RedirectToPage("Cart");
+            //HttpContext.Session.Remove("cart");
+            Size = 0;
+            HttpContext.Session.SetString("Size", JsonSerializer.Serialize(Size));
+            HttpContext.Session.SetString("Total", JsonSerializer.Serialize(Total));
+
+            //PdfDocument document = new PdfDocument();
+            //PdfPage page = document.AddPage();
+            //XGraphics gfx = XGraphics.FromPdfPage(page);
+            //XFont font = new XFont("Verdana", 20, XFontStyle.Bold);
+            //gfx.DrawString("ProductName", new XFont("Arial", 15, XFontStyle.Bold),XBrushes.Black, new XPoint(100, 280));
+            //gfx.DrawString("ProducPrice", new XFont("Arial", 15, XFontStyle.Bold), XBrushes.Black, new XPoint(350, 280));
+            //gfx.DrawLine(new XPen(XColor.FromArgb(50, 30, 200)), new XPoint(50,290), new XPoint(550, 290));
+            //int currentYposition_value = 303;
+            //int currentYposition_line = 310;
+            //foreach (var item in listP)
+            //{
+            //    gfx.DrawString(item.Product.ProductName, new XFont("Arial", 15, XFontStyle.Bold), XBrushes.Black, new XPoint(100, currentYposition_value));
+            //    gfx.DrawString(item.Product.UnitPrice.ToString(), new XFont("Arial", 15, XFontStyle.Bold), XBrushes.Black, new XPoint(350, currentYposition_value));
+            //    gfx.DrawLine(new XPen(XColor.FromArgb(50, 30, 200)), new XPoint(50, currentYposition_line), new XPoint(550, currentYposition_line));
+            //    currentYposition_value += 20;
+            //    currentYposition_line += 20;
+            //}
+            //gfx.DrawString(Total.ToString(), new XFont("Arial", 15, XFontStyle.Bold), XBrushes.Black, new XPoint(350, currentYposition_value));
+            //string filename = "E:\\TestPDF.pdf";
+            //document.Save(filename);
+            return RedirectToPage("Invoice");
             
         }
         private string GenerateCusID(int length)

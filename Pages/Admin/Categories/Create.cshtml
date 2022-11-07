@@ -1,0 +1,33 @@
+﻿@page
+@model MyRazorPage.Pages.Admin.Categories.CreateModel
+@{
+}
+<tbody id="tableBody">
+            <div id="content-right">
+                <div class="path-admin">CREATE A NEW CATEGORY</b></div>
+                @if(HttpContext.Session.GetString("alert")!=null){
+               <h3 style="color:red">@HttpContext.Session.GetString("alert")</h3>
+                }
+                <div class="content-main">
+                    <form id="content-main-product" method="post">
+                        <div class="content-main-1">
+                            <label>Product name (*):</label><br/>
+                            <input asp-for="category.CategoryName" required /><br />
+                           @* <span class="msg-error">Product name is required.</span><br/>*@
+                            <label>Description:</label><br/>
+                            <input asp-for="category.Description"><br/>
+                            <label>Picture:</label><br/>
+                            <input asp-for="category.Picture"><br/>
+                            @*<span class="msg-error">Units in stock is required.</span><br/>*@
+                    <input type="submit" value="Save" />
+                        </div>
+                    </form>
+                </div>
+    </div>
+</tbody>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
+

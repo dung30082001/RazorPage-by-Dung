@@ -2,4 +2,49 @@
 @model MyRazorPage.Pages.Product.CreateModel
 @{
 }
-<h3>Create product</h3>
+<tbody id="tableBody">
+            <div id="content-right">
+                <div class="path-admin">CREATE A NEW PRODUCT</b></div>
+                @if(ViewData["alert"]!=null){
+               <h3 style="color:red">@ViewData["alert"]</h3>
+                }
+                <div class="content-main">
+                    <form id="content-main-product" method="post">
+                        <div class="content-main-1">
+                            <label>Product name (*):</label><br/>
+                            <input asp-for="product.ProductName"  required/> <br/>
+                            <label>Unit price:</label><br/>
+                    <input pattern="\d{1,5}" title="Only digits" asp-for="product.UnitPrice" required><br />
+                            <label>Quantity per unit:</label><br/>
+                    <input asp-for="product.QuantityPerUnit" required><br />
+                            <label>Units in stock (*):</label><br/>
+                    <input pattern="\d{1,5}" title="Only digits" asp-for="product.UnitsInStock" required><br />
+                        </div>
+                        <div class="content-main-1">
+                            <label>Category (*):</label><br/>
+                            <select asp-for="product.CategoryId">
+                    @foreach (var item in Model.categories)
+                    {
+                        <option value="@item.CategoryId">@item.CategoryName</option>
+                    }
+                            </select>
+                            <br/>                          
+                            @*<span class="msg-error">Product name is required.</span><br/>*@
+                            <label>Reorder level:</label><br/>
+                            <input asp-for="product.ReorderLevel" value="0" disabled><br/>
+                            <label>Units on order:</label><br/>
+                            <input asp-for="product.UnitsOnOrder" value="0" disabled><br/>
+                            <label>Discontinued:</label><br/>
+                            <input type="checkbox" asp-for="product.Discontinued"><br/>
+                            <input type="submit" value="Save"/>
+                        </div>
+                    </form>
+                </div>
+    </div>
+</tbody>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
+

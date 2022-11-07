@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.EntityFrameworkCore;
 using MyRazorPage.Models;
 using System.Text.Json;
 
@@ -29,7 +30,7 @@ namespace MyRazorPage.Pages.Account
             orders = _dbContext.Orders.Where(x => x.CustomerId.Equals(accounts.CustomerId)).ToList();
             if (id != null)
             {
-                detail = _dbContext.OrderDetails.Where(x => x.OrderId == Convert.ToInt32(id)).ToList();
+                detail = _dbContext.OrderDetails.Where(x => x.OrderId == Convert.ToInt32(id)).Include(x=>x.Product).ToList();
             }
             Order = _dbContext.Orders.Find(Convert.ToInt32(id));
         }

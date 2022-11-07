@@ -8,77 +8,121 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MyRazorPage
 build_property.RootNamespace = MyRazorPage
-build_property.ProjectDir = C:\Users\beast\OneDrive\Desktop\PRN221_RazorPages\PRN221_RazorPages\MyRazorPage\MyRazorPage\
+build_property.ProjectDir = C:\Users\beast\source\repos\PRN221_RazorPages\PRN221_RazorPages\MyRazorPage\MyRazorPage\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\beast\OneDrive\Desktop\PRN221_RazorPages\PRN221_RazorPages\MyRazorPage\MyRazorPage
+build_property.MSBuildProjectDirectory = C:\Users\beast\source\repos\PRN221_RazorPages\PRN221_RazorPages\MyRazorPage\MyRazorPage
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/beast/OneDrive/Desktop/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Account/Cart.cshtml]
+[C:/Users/beast/source/repos/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Account/Cart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDYXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/beast/OneDrive/Desktop/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Account/Forgot.cshtml]
+[C:/Users/beast/source/repos/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Account/Forgot.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxGb3Jnb3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/beast/OneDrive/Desktop/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Account/Profile.cshtml]
+[C:/Users/beast/source/repos/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Account/Invoice.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxJbnZvaWNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beast/source/repos/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Account/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/beast/OneDrive/Desktop/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Account/Profile1.cshtml]
+[C:/Users/beast/source/repos/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Account/Profile1.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxQcm9maWxlMS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/beast/OneDrive/Desktop/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Account/SignIn.cshtml]
+[C:/Users/beast/source/repos/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Account/SignIn.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxTaWduSW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/beast/OneDrive/Desktop/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Account/SignOut.cshtml]
+[C:/Users/beast/source/repos/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Account/SignOut.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxTaWduT3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/beast/OneDrive/Desktop/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Account/SignUp.cshtml]
+[C:/Users/beast/source/repos/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Account/SignUp.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxTaWduVXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/beast/OneDrive/Desktop/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Admin/Product/Create.cshtml]
+[C:/Users/beast/source/repos/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Admin/Categories/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beast/source/repos/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Admin/Categories/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2F0ZWdvcmllc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beast/source/repos/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Admin/Categories/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beast/source/repos/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Admin/Categories/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2F0ZWdvcmllc1xVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beast/source/repos/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Admin/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cRGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beast/source/repos/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Admin/Excel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cRXhjZWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beast/source/repos/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Admin/Order.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cT3JkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beast/source/repos/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Admin/Order_Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cT3JkZXJfRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beast/source/repos/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Admin/Product/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUHJvZHVjdFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/beast/OneDrive/Desktop/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Admin/Product/Delete.cshtml]
+[C:/Users/beast/source/repos/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Admin/Product/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUHJvZHVjdFxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/beast/OneDrive/Desktop/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Admin/Product/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUHJvZHVjdFxFZGl0LmNzaHRtbA==
+[C:/Users/beast/source/repos/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Admin/Product/Display.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUHJvZHVjdFxEaXNwbGF5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/beast/OneDrive/Desktop/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Admin/Product/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUHJvZHVjdFxJbmRleC5jc2h0bWw=
+[C:/Users/beast/source/repos/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Admin/Product/Excel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUHJvZHVjdFxFeGNlbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/beast/OneDrive/Desktop/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Index.cshtml]
+[C:/Users/beast/source/repos/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Admin/Product/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUHJvZHVjdFxVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beast/source/repos/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/beast/OneDrive/Desktop/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Product/Detail.cshtml]
+[C:/Users/beast/source/repos/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Product/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdFxEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/beast/OneDrive/Desktop/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Shared/_Layout1.cshtml]
+[C:/Users/beast/source/repos/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Shared/_Layout1.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQxLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/beast/OneDrive/Desktop/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Shared/_Layout2.cshtml]
+[C:/Users/beast/source/repos/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Shared/_Layout2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/beast/OneDrive/Desktop/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/_ViewImports.cshtml]
+[C:/Users/beast/source/repos/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beast/source/repos/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/beast/OneDrive/Desktop/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/_ViewStart.cshtml]
+[C:/Users/beast/source/repos/PRN221_RazorPages/PRN221_RazorPages/MyRazorPage/MyRazorPage/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

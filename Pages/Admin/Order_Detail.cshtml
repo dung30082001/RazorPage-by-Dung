@@ -1,0 +1,47 @@
+﻿@page
+@model MyRazorPage.Pages.Admin.Order_DetailModel
+@{
+}
+<div id="content-left">
+    <ul>
+        <ul>
+            <a href="Dashboard">
+            <li>Dashboard</li></a>
+            <a href="Order">
+            <li>Orders</li></a>
+            <a href="Product/Display">
+            <li>Products</li></a>
+            <a href="Categories/Index">
+            <li>Categories</li></a>
+        </ul>
+    </ul>
+</div>
+            <div id="content-right">
+                <div class="path-admin">ORDER DETAIL</b></div>
+                <div class="content-main">
+                    <div id="content-main-dashboard">
+                        <div>
+                            <div class="profile-order-title">
+                                <div class="profile-order-title-left">
+                                    <div>OrderID: @Model.order.OrderId</div>
+                                    <div>Order creation date: @Model.order.OrderDate</div>
+                                </div>
+                                <div class="profile-order-title-right">
+                                    <span style="color: green;">Completed</span>
+                                </div>
+                            </div>
+                @foreach (var item in Model.od)
+                {
+                            <div class="profile-order-content" style="background-color: white;">
+                                <div class="profile-order-content-col1">
+                            <a href="detail.html"><img src="~/img/@item.Product.Image" width="100%" /></a>
+                                </div>
+                                <div class="profile-order-content-col2">@item.Product.ProductName</div>
+                                <div class="profile-order-content-col3">@item.Quantity</div>
+                                <div class="profile-order-content-col4">@item.UnitPrice</div>
+                            </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>

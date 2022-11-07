@@ -15,8 +15,11 @@
             </div>
             <div id="banner">
                 <ul>
-                    <li><a href="~/account/cart">Cart: @Context.Session.GetString("Size")</a></li>
-                    @if (Context.Session.GetString("CustSession") == null)
+                    @if (@Context.Session.GetString("Size") != null && Convert.ToInt32(@Context.Session.GetString("Size"))!=0)
+                    {
+                        <li><a href="~/account/cart">Cart: @Context.Session.GetString("Size")</a></li>
+                    }
+                    @if (@Context.Session.GetString("CustSession") == null)
                     {
                         <li><a href="~/account/signin">SignIn</a></li>
                         <li><a href="~/account/signUp">SignUp</a></li>
@@ -35,5 +38,8 @@
         </div>
         <div id="footer">footer</div>
     </div>
+    <script src="~/js/site.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>

@@ -1,0 +1,91 @@
+﻿@page
+@model MyRazorPage.Pages.Product.IndexModel
+@{
+}
+@Html.AntiForgeryToken()
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<div id="content-left">
+    <ul>
+        <a href="~/Admin/Dashboard">
+        <li>Dashboard</li></a>
+        <a href="~/Admin/Order">
+        <li>Orders</li></a>
+        <a href="Display">
+        <li>Products</li></a>
+        <a href="~/Admin/Categories/Index">
+        <li>Categories</li></a>
+    </ul>
+</div>
+<div id="content-right">
+    <div class="path-admin">PRODUCTS LIST</b></div>
+    <div class="content-main">
+        <div id="content-main-dashboard">
+            <div id="product-title-header">
+                <div id="product-title-1" style="width: 25%;">
+                    <b>Filter by Catetory:</b>
+                    <form method="post">
+                        <select name="Category">
+                            <option value="all">--- All ---</option>
+                            @foreach (var item in Model.category)
+                            {
+                            <option value="@item.CategoryId">@item.CategoryName</option>
+                            }
+                        </select>
+                        <input type="text" name="Search" placeholder="Enter product name to search" />
+                        <input type="submit" value="Search/Filter" style="width:100px;margin-bottom:20px">
+                    </form>
+                </div>
+                <div id="product-title-3" style="width: 20%;">
+                    <a href="Create">Create a new Product</a><br />
+                    <form method="post" enctype="multipart/form-data" asp-page-handler="Upload">
+                        <input type="file" asp-for="UploadedExcelFile" accept=".xlsx" />
+                        <input type="submit" />
+                    </form>
+                    <strong class="alert-danger">
+                        @Model.Message
+                    </strong>
+                </div>
+                <a class="nav-link text-dark" asp-page="Excel">Export to Excel</a>
+            </div>
+            <div id="order-table-admin">
+                <table id="orders">
+                    <tr>
+                        <th>ProductID</th>
+                        <th>ProductName</th>
+                        <th>UnitPrice</th>
+                        <th>QuantityPerUnit</th>
+                        <th>UnitsInStock</th>
+                        <th>Category</th>
+                        <th>Discontinued</th>
+                        <th></th>
+                    </tr>
+                    @foreach(var obj in Model.products){
+                    <tr>
+                        <td><a href="order-detail.html?id=5">@obj.ProductId</a></td>
+                        <td>@obj.ProductName</td>
+                        <td>@obj.UnitPrice</td>
+                        <td>@obj.QuantityPerUnit</td>
+                        <td>@obj.UnitsInStock</td>
+                        <td>@obj.Category.CategoryName</td>
+                            @if (obj.Discontinued == true)
+                            {
+                                <td>True</td>
+                            }
+                            @if (obj.Discontinued == false)
+                            {
+                                <td>False</td>
+                            }
+                            <td>
+                            <a asp-page="Update" asp-route-id="@obj.ProductId">Edit</a>  | 
+                            <a onclick="return confirm('Are you sure you want to delete product :@obj.ProductName')" asp-page="Delete" asp-route-id="@obj.ProductId">Delete</a>
+                        </td>
+                    </tr>
+                    }
+                </table>
+                <paging total-records="@Model.totalProducts" show-total-pages="false" show-total-records="false" page-size="@Model.pageSize" page-no="@Model.pageNo"></paging>
+            </div>
+        </div>
+    </div>
+</div>

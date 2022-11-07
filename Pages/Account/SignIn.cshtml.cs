@@ -1,8 +1,11 @@
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using MyRazorPage.Models;
 using System.Drawing;
+using System.Security.Claims;
 using System.Text.Json;
 
 namespace MyRazorPage.Pages.Account
@@ -18,7 +21,7 @@ namespace MyRazorPage.Pages.Account
         [BindProperty]
         public Models.Account Account { get; set; }
 
-        public int Id { get; set; }
+        public int Role { get; set; }
         public void OnGet()
         {
         }
@@ -27,12 +30,31 @@ namespace MyRazorPage.Pages.Account
         {
             if (ModelState.IsValid)
             {
-                var acc = await dBContext.Accounts.SingleOrDefaultAsync(a => a.Email.Equals(Account.Email) && a.Password.Equals(Account.Password));
+                Encryption en = new Encryption();
+                string newP = en.Encrypt(Account.Password);
+                var acc = await dBContext.Accounts.SingleOrDefaultAsync(a => a.Email.Equals(Account.Email) && a.Password.Equals(newP));
+                ClaimsIdentity identity = null;
+                bool isAuthenticate = false;
                 if (acc != null)
                 {
-                    Id = acc.AccountId;
-                    HttpContext.Session.SetInt32("Id", Id);
+                    identity = new ClaimsIdentity(new[]
+                {
+                    new Claim(ClaimTypes.Role,acc.Role.ToString())
+                }, CookieAuthenticationDefaults.AuthenticationScheme);
+                    isAuthenticate = true;
+                    Role = (int)acc.Role;
+                    if (isAuthenticate)
+                    {
+                        var principle = new ClaimsPrincipal(identity);
+                        var signin = HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principle);
+                    }
+                    HttpContext.Session.SetString("cuID",acc.CustomerId);
                     HttpContext.Session.SetString("CustSession", JsonSerializer.Serialize(acc));
+                    HttpContext.Session.SetInt32("Role", Role);
+                    if(Role == 1)
+                    {
+                        return RedirectToPage("/Admin/Order");
+                    }
                     return RedirectToPage("/index");
                 }
                 else

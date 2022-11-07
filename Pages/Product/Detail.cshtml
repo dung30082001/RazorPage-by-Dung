@@ -15,13 +15,7 @@
             <div id="product-detail">
                 <div id="product-detail-left">
                     <div id="product-img">
-                        <img src="~/img/1.jpg" />
-                    </div>
-                    <div id="product-img-items">
-                        <div><a href="#"><img src="~/img/1.jpg" /></a></div>
-                        <div><a href="#"><img src="~/img/1.jpg" /></a></div>
-                        <div><a href="#"><img src="~/img/1.jpg" /></a></div>
-                        <div><a href="#"><img src="~/img/1.jpg" /></a></div>
+                        <img src="~/img/@Model.Products.Image" />
                     </div>
                 </div>
 
@@ -32,21 +26,11 @@
                         <div id="product-detail-buttons">
                             <div id="product-detail-button">
                                 <input type="button" value="BY NOW">
-                                <a style="background-color: #fff; color:red;border: 1px solid gray;" asp-page="/Account/Cart" asp-page-handler="buynow" asp-route-id="@Model.Id">ADD TO CART </a>
+                                <a style="background-color: #fff; color:red;border: 1px solid gray;" asp-page="/Account/Cart" asp-page-handler="buynow" asp-route-id="@Model.Products.ProductId" asp-route-cusid="@Model.customer.CustomerId">ADD TO CART </a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div id="info-detail">
-        <div id="info-detail-title">
-            <h2>Information deltail</h2>
-            <div style="margin:10px auto;">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, debitis. Asperiores soluta eveniet eos accusantium doloremque cum suscipit ducimus enim at sapiente mollitia consequuntur dicta quaerat, sunt voluptates autem. Quam!
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem illum autem veritatis maxime corporis quod quibusdam nostrum eaque laborum numquam quos unde eveniet aut, exercitationem voluptatum veniam fugiat, debitis esse?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio eligendi ratione vitae nobis numquam dolorum assumenda saepe enim cumque blanditiis, deleniti neque voluptate vel ducimus in omnis harum aut nisi.
             </div>
         </div>
     </div>

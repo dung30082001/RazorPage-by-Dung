@@ -15,11 +15,13 @@ namespace MyRazorPage.Pages.Product
             _dbContext = dbContext;
         }
 
+        public Models.Account? Accounts { get; set; }
+
+        public Models.Customer customer { get; set; }
         public Models.Product Products { get; set; }
         [BindProperty]
         public Models.Product product { get; set; }
 
-        public int Id { get; set; }
 
         public void OnGet(String id)
         {
@@ -28,14 +30,11 @@ namespace MyRazorPage.Pages.Product
                 id = "1";
             }
             Products = _dbContext.Products.Find(Convert.ToInt32(id));
-            //if ((int)HttpContext.Session.GetInt32("Id") != null)
-            //{
-            //    Id = (int)HttpContext.Session.GetInt32("Id");
-            //}
-            //else
-            //{
-            //    return;
-            //}
+            customer = _dbContext.Customers.Find(HttpContext.Session.GetString("cuID"));
+            if(customer == null)
+            {
+                customer = _dbContext.Customers.Find("FOLIG");
+            }
         }
     }
 }

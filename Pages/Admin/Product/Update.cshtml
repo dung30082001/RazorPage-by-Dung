@@ -1,0 +1,43 @@
+﻿@page
+@model MyRazorPage.Product.UpdateModel
+@{
+}
+<tbody id="tableBody">
+    <div id="content-right">
+        <div class="path-admin">EDIT PRODUCT</b></div>
+
+        <div class="content-main">
+            <form id="content-main-product" method="post">
+                <div class="content-main-1">
+                    <input asp-for="Product.ProductId" hidden />
+                    <label>Product name (*):</label><br />
+                    <input asp-for="Product.ProductName" value="@Model.Product.ProductName" required><br />
+                    <label>Unit price:</label><br />
+                    <input pattern="\d{1,5}" title="Only digits" value="@Model.Product.UnitPrice" asp-for="Product.UnitPrice" required><br />
+                    <label>Quantity per unit:</label><br />
+                    <input value="@Model.Product.QuantityPerUnit" asp-for="Product.QuantityPerUnit"><br />
+                    <label>Units in stock (*):</label><br />
+                    <input pattern="\d{1,5}" title="Only digits" value="@Model.Product.UnitsInStock" asp-for="Product.UnitsInStock"><br />
+                </div>
+                <div class="content-main-1">
+                    <label>Category (*):</label><br />
+                    <select asp-for="Product.CategoryId">
+                        @foreach (var item in Model.categories)
+                        {
+                            <option value="@item.CategoryId">@item.CategoryName</option>
+                        }
+                    </select>
+                    <br />
+                    <label>Reorder level:</label><br />
+                    <input asp-for="Product.ReorderLevel" value="0" disabled><br />
+                    <label>Units on order:</label><br />
+                    <input asp-for="Product.UnitsOnOrder" value="0" disabled><br />
+                    <label>Discontinued:</label><br />
+                    <input type="checkbox" asp-for="Product.Discontinued"><br />
+                    <input type="submit" value="Save" />
+                </div>
+            </form>
+        </div>
+    </div>
+</tbody>
+

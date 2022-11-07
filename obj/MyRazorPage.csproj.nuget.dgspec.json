@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\beast\\OneDrive\\Desktop\\PRN221_RazorPages\\PRN221_RazorPages\\MyRazorPage\\MyRazorPage\\MyRazorPage.csproj": {}
+    "C:\\Users\\beast\\source\\repos\\PRN221_RazorPages\\PRN221_RazorPages\\MyRazorPage\\MyRazorPage\\MyRazorPage.csproj": {}
   },
   "projects": {
-    "C:\\Users\\beast\\OneDrive\\Desktop\\PRN221_RazorPages\\PRN221_RazorPages\\MyRazorPage\\MyRazorPage\\MyRazorPage.csproj": {
+    "C:\\Users\\beast\\source\\repos\\PRN221_RazorPages\\PRN221_RazorPages\\MyRazorPage\\MyRazorPage\\MyRazorPage.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\beast\\OneDrive\\Desktop\\PRN221_RazorPages\\PRN221_RazorPages\\MyRazorPage\\MyRazorPage\\MyRazorPage.csproj",
+        "projectUniqueName": "C:\\Users\\beast\\source\\repos\\PRN221_RazorPages\\PRN221_RazorPages\\MyRazorPage\\MyRazorPage\\MyRazorPage.csproj",
         "projectName": "MyRazorPage",
-        "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\PRN221_RazorPages\\PRN221_RazorPages\\MyRazorPage\\MyRazorPage\\MyRazorPage.csproj",
+        "projectPath": "C:\\Users\\beast\\source\\repos\\PRN221_RazorPages\\PRN221_RazorPages\\MyRazorPage\\MyRazorPage\\MyRazorPage.csproj",
         "packagesPath": "C:\\Users\\beast\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\beast\\OneDrive\\Desktop\\PRN221_RazorPages\\PRN221_RazorPages\\MyRazorPage\\MyRazorPage\\obj\\",
+        "outputPath": "C:\\Users\\beast\\source\\repos\\PRN221_RazorPages\\PRN221_RazorPages\\MyRazorPage\\MyRazorPage\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\beast\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,13 +40,47 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "EFCore.BulkExtensions": {
+              "target": "Package",
+              "version": "[6.5.6, )"
+            },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[6.0.8, )"
+            },
+            "ExcelDataReader": {
+              "target": "Package",
+              "version": "[3.6.0, )"
+            },
+            "LazZiya.TagHelpers": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.9, )"
             },
+            "Microsoft.EntityFrameworkCore.Proxies": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.9, )"
             },
@@ -57,6 +91,10 @@
             "Newtonsoft.Json.Bson": {
               "target": "Package",
               "version": "[1.0.2, )"
+            },
+            "Select.HtmlToPdf": {
+              "target": "Package",
+              "version": "[22.1.0, )"
             }
           },
           "imports": [

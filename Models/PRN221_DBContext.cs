@@ -239,6 +239,12 @@ namespace MyRazorPage.Models
 
                 entity.HasIndex(e => e.ProductName, "ProductName");
 
+                entity.HasIndex(e => e.Image, "Image");
+
+                entity.Property(e => e.Image).HasMaxLength(255);
+
+                entity.Property(e => e.Image).HasColumnName("Image");
+
                 entity.Property(e => e.ProductId).HasColumnName("ProductID");
 
                 entity.Property(e => e.CategoryId).HasColumnName("CategoryID");

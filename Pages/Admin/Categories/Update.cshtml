@@ -1,0 +1,25 @@
+﻿@page
+@model MyRazorPage.Pages.Admin.Categories.UpdateModel
+@{
+}
+<tbody id="tableBody">
+    <div id="content-right">
+        <div class="path-admin">EDIT CATEGORY</b></div>
+
+        <div class="content-main">
+            <form id="content-main-product" method="post">
+                <div class="content-main-1">
+                    <input asp-for="Category.CategoryId" hidden />
+                    <label>CategoryName name (*):</label><br />
+                    <input asp-for="Category.CategoryName" value="@Model.Category.CategoryName" required><br />
+                    <label>Description:</label><br />
+                    <input value="@Model.Category.Description" asp-for="Category.Description" required><br />
+                    <label>Picture:</label><br />
+                    <input value="@Model.Category.Picture" asp-for="Category.Picture"><br />
+                    <input type="submit" value="Save" />
+                </div>
+            </form>
+        </div>
+    </div>
+</tbody>
+

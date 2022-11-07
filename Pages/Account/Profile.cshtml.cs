@@ -1,5 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.SignalR;
+using Microsoft.EntityFrameworkCore;
+using MyRazorPage.Hubs;
 using MyRazorPage.Models;
 using System.Text.Json;
 
@@ -7,7 +10,7 @@ namespace MyRazorPage.Pages.Account
 {
     public class ProfileModel : PageModel
     {
-        
+        private readonly IHubContext<HubServer> _hubContext;
         public Models.Account accounts { get; set; }
 
         private readonly PRN221_DBContext _dbContext;
@@ -17,9 +20,10 @@ namespace MyRazorPage.Pages.Account
         public Models.Customer Customers { get; set; }
         [BindProperty]
         public Models.Account Account { get; set; }
-        public ProfileModel(PRN221_DBContext dbContext)
+        public ProfileModel(PRN221_DBContext dbContext, IHubContext<HubServer> hubContext)
         {
             _dbContext = dbContext;
+            _hubContext = hubContext;
         }
         public void OnGet()
         {
@@ -35,7 +39,8 @@ namespace MyRazorPage.Pages.Account
                 _dbContext.Accounts.Update(Account);
                 _dbContext.Customers.Update(Customers);
                 await _dbContext.SaveChangesAsync();
-                return RedirectToPage("/Index");
+                await _hubContext.Clients.All.SendAsync("ReloadProduct");
+                return RedirectToPage("Profile");
             }
             return Page();
         }

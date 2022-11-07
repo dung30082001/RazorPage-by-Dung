@@ -10,8 +10,26 @@ namespace MyRazorPage.Models
             OrderDetails = new HashSet<OrderDetail>();
         }
 
+        public Product(int productId, string productName, int? categoryId, string? quantityPerUnit, decimal? unitPrice, short? unitsInStock, short? unitsOnOrder, short? reorderLevel, bool discontinued,string? image, Category? category, ICollection<OrderDetail> orderDetails)
+        {
+            ProductId = productId;
+            ProductName = productName;
+            CategoryId = categoryId;
+            QuantityPerUnit = quantityPerUnit;
+            UnitPrice = unitPrice;
+            UnitsInStock = unitsInStock;
+            UnitsOnOrder = unitsOnOrder;
+            ReorderLevel = reorderLevel;
+            Discontinued = discontinued;
+            Image = image;  
+            Category = category;
+            OrderDetails = orderDetails;
+        }
+
         public int ProductId { get; set; }
         public string ProductName { get; set; } = null!;
+        
+        public string? Image { get; set; }
         public int? CategoryId { get; set; }
         public string? QuantityPerUnit { get; set; }
         public decimal? UnitPrice { get; set; }

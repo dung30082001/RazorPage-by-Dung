@@ -1,0 +1,70 @@
+﻿@page
+@model MyRazorPage.Pages.Admin.OrderModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<div id="content-left">
+    <ul>
+        <a href="Dashboard">
+        <li>Dashboard</li>
+        </a>
+        <a href="Order">
+        <li>Orders</li>
+        </a>
+        <a href="Product/Display">
+        <li>Products</li></a>
+        <a href="Categories/Index">
+        <li>Categories</li></a>
+    </ul>
+</div>
+<div id="content-right">
+    <div class="path-admin">ORDERS LIST</b></div>
+    <div class="content-main">
+        <div id="content-main-dashboard">
+            <div id="order-title">
+                <b>Filter by Order date:</b>
+                <form method="post">
+                    From: <input type="date" name="from" />
+                    To: <input type="date" name="to" />
+                    <input type="submit" value="Filter" style="height:45px">
+                </form>
+                <a class="nav-link text-dark" asp-page="Excel">Export to Excel</a>
+            </div>
+            <div id="order-table">
+                <table id="orders">
+                    <tr>
+                        <th>OrderID</th>
+                        <th>OrderDate</th>
+                        <th>RequiredDate</th>
+                        <th>ShippedDate</th>
+                        <th>Employee</th>
+                        <th>Customer</th>
+                        <th>Freight($)</th>
+                        <th>Status</th>
+                    </tr>
+                   @foreach(var od in Model.orders){
+                       <tr>
+                            <td> <a asp-page="order_detail" asp-route-id="@od.OrderId">@od.OrderId</a></td>
+                        <td>@od.OrderDate</td>
+                        <td>@od.RequiredDate</td>
+                        <td>@od.ShippedDate</td>
+                        <td>@od.Employee.LastName @od.Employee.FirstName</td>
+                        <td>@od.CustomerId</td>
+                        <td>@od.Freight</td>
+                            @if (@od.ShippedDate != null){
+                        <td style="color:blue">Completed</td>
+                            }
+                            @if (@od.ShippedDate == null)
+                            {
+                                <td style="color:red">Canceled</td>
+                            }
+                        </tr>
+                   }                   
+                </table>
+                <paging total-records="@Model.totalOrders" show-total-pages="false" show-total-records="false" page-size="@Model.pageSize" page-no="@Model.pageNo"></paging>
+            </div>
+        </div>
+    </div>
+</div>

@@ -11,8 +11,12 @@
     </div>
     <div id="form-content">
         <form action="" method="post">
+                @if (ViewData["Alert"] != null)
+            {
+                <h4 style="color:red">@ViewData["Alert"]</h4>
+                }
             <label>Enter your registered email address<span style="color: red;">*</span></label><br />
-            <input type="text" /><br />
+            <input asp-for="Email" /><br />
             <input type="submit" value="GET PASSWORD" style="margin-bottom: 30px;" /><br />
         </form>
     </div>
